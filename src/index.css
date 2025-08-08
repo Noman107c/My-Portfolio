@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: radial-gradient(circle at top left, #2e002e, #0d001a);
+  min-height: 100vh;
+  color: white;
+}
+
+/* Links */
+a {
+  color: #facc15; /* Tailwind's yellow-400 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #fde047; /* Tailwind's yellow-300 */
+}
+
+/* Buttons */
+button {
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #facc15; /* yellow-400 */
+  color: #000;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+button:hover {
+  background-color: #fde047; /* yellow-300 */
+}
+button:focus {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* Section spacing */
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Project cards */
+.project-card {
+  background-color: #1e293b; /* slate-800 */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Contact form fields */
+input, textarea {
+  background-color: #334155; /* slate-700 */
+  border: 1px solid #475569; /* slate-600 */
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+input:focus, textarea:focus {
+  border-color: #facc15; /* yellow-400 */
+  outline: none;
+}
