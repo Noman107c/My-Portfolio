@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "cors": "^2.8.5",
+    "emailjs-com": "^3.2.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

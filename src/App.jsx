@@ -18,7 +18,7 @@ function Hero() {
   return (
     <section className="hero">
       <p className="hero-subtitle">Hey, I’m</p>
-      <h1 className="hero-title">M.Noman Alam</h1>
+      <h1 className="hero-title">Muhammad Noman Alam</h1>
       <p className="hero-text">
         A full-stack developer passionate about building dynamic, user-friendly web apps.
       </p>
@@ -46,8 +46,9 @@ function About() {
     <section id="about" className="about">
       <h2>About Me</h2>
       <p>
-        I'm a full-stack developer with a passion for building performant, scalable, and visually appealing web apps.
-      </p>
+        Software Engineering student with frontend development experience using HTML, CSS,
+        JavaScript, React, and Node.js. Completed multiple academic projects focused on
+        responsive and user-friendly interfaces. Currently working on a React-based project.      </p>
       <div className="tech-grid">
         {techStack.map((tech) => (
           <div key={tech.name} className="tech-card">
@@ -80,12 +81,19 @@ function Projects() {
       <h2>Projects</h2>
       <div className="project-grid">
         {projects.map((project) => (
-          <a key={project.title} href={project.link} className="project-card" target="_blank" rel="noreferrer">
+          <div key={project.title} className="project-card">
             <img src={project.image} alt={project.title} />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <button>View Project</button>
-          </a>
+            <a 
+              href={project.link} 
+              className="project-button" 
+              target="_blank" 
+              rel="noreferrer"
+            >
+              View Project
+            </a>
+          </div>
         ))}
       </div>
     </section>
@@ -100,6 +108,12 @@ function Experience() {
       company: "Globium Clouds",
       year: "2025 - Present",
       description: "Developed responsive React applications with Tailwind CSS and Bootstrap."
+    },
+    {
+      role: "Sales Representative",
+      company: "MStek",
+      year: "Aug, 2023 - Dec, 2023",
+      description: "Sales Representative at MStek.",
     }
   ];
 
@@ -145,8 +159,10 @@ function Footer() {
       <p>© {new Date().getFullYear()} Noman. All rights reserved.</p>
       <div className="footer-links">
         <a href="https://github.com/Noman107c" target="Github" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/muhammad-noman-alam-ba7234379?utm_source=share&utm_campaign=share_via&utm_content=
+                        profile&utm_medium=android_app" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="mailto:nomanirshad0324@gmail.com">Email</a>
+        <a href="https://wa.me/923429037282 " target="_blank" rel="noreferrer">whatsapp</a>
       </div>
       
     </footer>
@@ -169,3 +185,6 @@ export default function App() {
     </div>
   );
 }
+
+
+

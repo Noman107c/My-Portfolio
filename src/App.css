@@ -26,35 +26,32 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 10px;
-  height: 100vh;
-  width: 20px;
-  background: linear-gradient(to bottom,rgba(0, 0, 0, 0.3);
-  z-index: 1000;);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0,0,0,0.6));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: :center;
+  flex-direction: row;
+  justify-content: flex-end; /* pushes links to the right */
+  align-items: center;
   gap: 24px;
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  rotate: -180deg;
-
 }
 
 .navbar a {
   color: #fff;
   font-size: 14px;
   text-decoration: none;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
   transition: color 0.1s, transform 0.3s;
 }
+
 .navbar a:hover {
   color: #ffd1ff;
   transform: scale(1.1);
 }
+
 
 /* Main Content Layout */
 .app {
@@ -69,7 +66,8 @@ body {
 .hero {
   min-height: 100vh;
   text-align: center;
-  padding: 0 2px;
+  padding: 0 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,11 +92,13 @@ body {
 .hero-text {
   margin-top: 20px;
   font-size: 18px;
-  max-width: 600px;
+  max-width: auto;
   margin-left: auto;
   margin-right: auto;
   color: #bbb;
   line-height: 1.6;
+  align-text: center;
+  
 }
 
 .hero-button {
@@ -110,12 +110,19 @@ body {
   color: white;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4);
+  /* box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4); */
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 .hero-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(255, 0, 150, 0.6);
+  /* box-shadow: 0 6px 18px rgba(255, 0, 150, 0.6); */
+}
+.hero-button:hover {
+  color: pink;
+  transform: scale(1.1);
 }
 
 /* About Section */
@@ -124,7 +131,7 @@ body {
   background: #111;
 }
 .about h2 {
-  font-size: 32px;
+  font-size: px;
   font-weight: bold;
   margin-bottom: 20px;
   background: linear-gradient(to right, purple, pink);
@@ -132,15 +139,17 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .about p {
-  max-width: 600px;
+  max-width: max-content;
+  margin-right: auto;
   margin-bottom: 24px;
   color: #bbb;
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
   gap: 12px;
+  color: #bbb
 }
 .tech-card {
   background: rgba(34, 34, 34, 0.8);
@@ -152,7 +161,8 @@ body {
 }
 .tech-card:hover {
   transform: translateY(-5px);
-  background: rgba(54, 54, 54, 0.9);
+  background:  purple, pink;
+  color: pink;
 }
 
 /* Projects Section */
@@ -166,8 +176,7 @@ body {
   background: linear-gradient(to right, purple, pink);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
-
+    box-shadow: purple, pink;
 }
 .project-grid {
   display: grid;
@@ -179,23 +188,45 @@ body {
   padding: 16px;
   border-radius: 12px;
   text-decoration: none;
-  color: white;
+  color: #bbb;
+  background-color: purple, pink;
   transition: transform 0.3s, box-shadow 0.3s;
   backdrop-filter: blur(5px);
 }
-.project-card img {
-  width: 10%;
-  border-radius: 8px;
-  place-items: center;
-  box-sizing: border-box;
-}
+
 .project-card:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 6px 18px rgba(255, 0, 150, 0.4);
 }
 .project-card p {
-  color: #aaa;
+  color: purple, pink;
 }
+.project-viewbtn
+{
+  background: linear-gradient(to right, purple, pink);
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rg
+}
+
+.project-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, purple, pink);
+  border-radius: 8px;
+  color: white;
+  /* box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4); */
+}
+
+.project-button:hover {
+  color: pink;
+  transform: scale(10);
+}
+
+
 
 /* Contact Section */
 #contact {
