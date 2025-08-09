@@ -173,7 +173,6 @@ function Footer() {
     <footer className="footer">
       <p>© {new Date().getFullYear()} Noman. All rights reserved.</p>
       <div className="footer-links">
-        <a href="#home"><FaHome /> Home</a>
         <a href="https://github.com/Noman107c"><FaGithub/>Github</a>
         <a href="https://www.linkedin.com/in/muhammad-noman-alam-ba7234379" ><FaLinkedin/>Linkedin</a>
         <a href="mailto:nomanirshad0324@gmail.com">Email</a>
