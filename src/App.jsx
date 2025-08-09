@@ -65,15 +65,15 @@ function Projects() {
     {
       title: "QUIZ APP",
       description: "A cool project that solves real problems.",
-      link: "https://quizapp-chi-lovat.vercel.app/",
-      image: "https://via.placeholder.com/300x180"
+      link: "https://globium-cloud-quiz-app.vercel.app/",
+      image: "src/assets/image.png"
     },
     {
       title: "My-Portfolio",
       description: "Another awesome app built with React.",
-      link: "https://myportfolio-omega-wine.vercel.app/",
-      image: "https://via.placeholder.com/300x180"
-    }
+      link: "https://my-portfolio-noman.vercel.app/",
+      image: "src/image.png"}
+      
   ];
 
   return (
@@ -85,6 +85,7 @@ function Projects() {
             <img src={project.image} alt={project.title} />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
+            <button>View Project</button>
           </a>
         ))}
       </div>

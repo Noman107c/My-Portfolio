@@ -69,7 +69,7 @@ body {
 .hero {
   min-height: 100vh;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,7 @@ body {
 
 .hero-button {
   margin-top: 24px;
-  padding: 12px 28px;
+  padding: 12px 2px;
   background: linear-gradient(to right, purple, pink);
   border-radius: 8px;
   font-weight: bold;
@@ -111,6 +111,7 @@ body {
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4);
+
 }
 .hero-button:hover {
   transform: translateY(-3px);
@@ -165,6 +166,8 @@ body {
   background: linear-gradient(to right, purple, pink);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+
 }
 .project-grid {
   display: grid;
@@ -181,8 +184,10 @@ body {
   backdrop-filter: blur(5px);
 }
 .project-card img {
-  width: 100%;
+  width: 10%;
   border-radius: 8px;
+  place-items: center;
+  box-sizing: border-box;
 }
 .project-card:hover {
   transform: translateY(-5px) scale(1.03);
