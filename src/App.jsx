@@ -66,13 +66,11 @@ function Projects() {
       title: "QUIZ APP",
       description: "A cool project that solves real problems.",
       link: "https://globium-cloud-quiz-app.vercel.app/",
-      image: "src/assets/image.png"
     },
     {
       title: "My-Portfolio",
       description: "Another awesome app built with React.",
       link: "https://my-portfolio-noman.vercel.app/",
-      image: "src/image.png"}
       
   ];
 
