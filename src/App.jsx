@@ -1,14 +1,37 @@
 import React from "react";
 import "./App.css";
+import {
+  FaHome,
+  FaUser,
+  FaCode,
+  FaBriefcase,
+  FaEnvelope,
+  FaLinkedin,
+  FaGithub,
+  FaWhatsapp,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaJava,
+  FaNodeJs,
+  FaGitAlt,
+  FaPython
+} from "react-icons/fa";
+import { SiTailwindcss, SiMongodb } from "react-icons/si";
 
 // Navbar Component
 function Navbar() {
   return (
     <nav className="navbar">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <div className="nav-links">
+        <a href="#home">  <FaHome /> Home</a>
+        <a href="#about">  <FaUser /> About</a>
+        <a href="#projects">  <FaCode /> Projects</a>
+        <a href="#experience">  <FaBriefcase /> Experience</a>
+        <a href="#contact">  <FaEnvelope /> Contact</a>
+      </div>
+
     </nav>
   );
 }
@@ -16,7 +39,7 @@ function Navbar() {
 // Hero Section
 function Hero() {
   return (
-    <section className="hero">
+    <section id="home" className="hero">
       <p className="hero-subtitle">Hey, I’m</p>
       <h1 className="hero-title">Muhammad Noman Alam</h1>
       <p className="hero-text">
@@ -27,19 +50,19 @@ function Hero() {
   );
 }
 
-// About Section
+// About Section with Skill Icons
 function About() {
   const techStack = [
-    { name: "HTML" },
-    { name: "CSS" },
-    { name: "JavaScript" },
-    { name: "React" },
-    { name: "Java" },
-    { name: "Tailwind" },
-    { name: "Node.js" },
-    { name: "Git" },
-    { name: "Python" },
-    { name: "Machine Learning" },
+    { name: "HTML", icon: <FaHtml5 /> },
+    { name: "CSS", icon: <FaCss3Alt /> },
+    { name: "JavaScript", icon: <FaJs /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "Java", icon: <FaJava /> },
+    { name: "Tailwind", icon: <SiTailwindcss /> },
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "Git", icon: <FaGitAlt /> },
+    { name: "Python", icon: <FaPython /> },
   ];
 
   return (
@@ -48,10 +71,12 @@ function About() {
       <p>
         Software Engineering student with frontend development experience using HTML, CSS,
         JavaScript, React, and Node.js. Completed multiple academic projects focused on
-        responsive and user-friendly interfaces. Currently working on a React-based project.      </p>
+        responsive and user-friendly interfaces. Currently working on a React-based project.
+      </p>
       <div className="tech-grid">
         {techStack.map((tech) => (
           <div key={tech.name} className="tech-card">
+            <span className="tech-icon">{tech.icon}</span>
             <span>{tech.name}</span>
           </div>
         ))}
@@ -70,8 +95,7 @@ function Projects() {
     {
       title: "My-Portfolio",
       link: "https://my-portfolio-noman.vercel.app/",
-}
-      
+    }
   ];
 
   return (
@@ -80,13 +104,11 @@ function Projects() {
       <div className="project-grid">
         {projects.map((project) => (
           <div key={project.title} className="project-card">
-            <img src={project.image} alt={project.title} />
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a 
-              href={project.link} 
-              className="project-button" 
-              target="_blank" 
+            <a
+              href={project.link}
+              className="project-button"
+              target="_blank"
               rel="noreferrer"
             >
               View Project
@@ -141,12 +163,7 @@ function Contact() {
         <textarea placeholder="Your Message" required></textarea>
         <button type="submit" className="hero-button">Send Message</button>
       </form>
-      <div className="contact-info text-center mt-8">
-
-</div>
-
     </section>
-    
   );
 }
 
@@ -156,13 +173,13 @@ function Footer() {
     <footer className="footer">
       <p>© {new Date().getFullYear()} Noman. All rights reserved.</p>
       <div className="footer-links">
-        <a href="https://github.com/Noman107c" target="Github" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/muhammad-noman-alam-ba7234379?utm_source=share&utm_campaign=share_via&utm_content=
-                        profile&utm_medium=android_app" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="#home"><FaHome /> Home</a>
+        <a href="https://github.com/Noman107c"><FaGithub/>Github</a>
+        <a href="https://www.linkedin.com/in/muhammad-noman-alam-ba7234379" ><FaLinkedin/>Linkedin</a>
         <a href="mailto:nomanirshad0324@gmail.com">Email</a>
-        <a href="https://wa.me/923429037282 " target="_blank" rel="noreferrer">whatsapp</a>
+        <a href="https://wa.me/923429037282" ><FaWhatsapp/>WhatsApp</a>
       </div>
-      
+
     </footer>
   );
 }
@@ -183,6 +200,3 @@ export default function App() {
     </div>
   );
 }
-
-
-
