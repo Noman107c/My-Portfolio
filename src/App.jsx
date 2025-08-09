@@ -71,6 +71,7 @@ function Projects() {
       title: "My-Portfolio",
       description: "Another awesome app built with React.",
       link: "https://my-portfolio-noman.vercel.app/",
+}
       
   ];
 
