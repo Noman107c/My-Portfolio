@@ -34,10 +34,12 @@ function About() {
     { name: "CSS" },
     { name: "JavaScript" },
     { name: "React" },
-    { name: "Next.js" },
+    { name: "Java" },
     { name: "Tailwind" },
     { name: "Node.js" },
     { name: "Git" },
+    { name: "Python" },
+    { name: "Machine Learning" },
   ];
 
   return (
@@ -63,14 +65,14 @@ function Projects() {
     {
       title: "QUIZ APP",
       description: "A cool project that solves real problems.",
-      // image: "C:\Users\Administrator\Desktop\my-portfolio\my-portfolio\quizap.png",
-      link: "https://quizapp-chi-lovat.vercel.app/"
+      link: "https://quizapp-chi-lovat.vercel.app/",
+      image: "https://via.placeholder.com/300x180"
     },
     {
-      title: "Project Two",
+      title: "My-Portfolio",
       description: "Another awesome app built with React.",
-      // image: "/images/project2.gif",
-      link: "#"
+      link: "https://myportfolio-omega-wine.vercel.app/",
+      image: "https://via.placeholder.com/300x180"
     }
   ];
 
@@ -79,7 +81,7 @@ function Projects() {
       <h2>Projects</h2>
       <div className="project-grid">
         {projects.map((project) => (
-          <a key={project.title} href={project.link} className="project-card">
+          <a key={project.title} href={project.link} className="project-card" target="_blank" rel="noreferrer">
             <img src={project.image} alt={project.title} />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
@@ -90,16 +92,63 @@ function Projects() {
   );
 }
 
+// Experience Section
+function Experience() {
+  const experiences = [
+    {
+      role: "Mern Stack (Internship)",
+      company: "Globium Clouds",
+      year: "2025 - Present",
+      description: "Developed responsive React applications with Tailwind CSS and Bootstrap."
+    }
+  ];
+
+  return (
+    <section id="experience" className="experience">
+      <h2>Experience</h2>
+      {experiences.map((exp, index) => (
+        <div key={index} className="tech-card experience-card">
+          <h3>{exp.role} - <span className="company-name">{exp.company}</span></h3>
+          <p className="experience-year">{exp.year}</p>
+          <p>{exp.description}</p>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+// Contact Section
+function Contact() {
+  return (
+    <section id="contact" className="contact">
+      <h2>Contact Me</h2>
+      <p>I'd love to hear from you! Fill out the form below or reach me via social links.</p>
+      <form className="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" className="hero-button">Send Message</button>
+      </form>
+      <div className="contact-info text-center mt-8">
+
+</div>
+
+    </section>
+    
+  );
+}
+
 // Footer
 function Footer() {
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} M. Noman. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} Noman. All rights reserved.</p>
       <div className="footer-links">
-        <a href="https://github.com/Noman107c" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/Noman107c" target="Github" rel="noreferrer">GitHub</a>
         <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="nomanirshad0324gmail.com">Email</a>
+        <a href="mailto:nomanirshad0324@gmail.com">Email</a>
       </div>
+      
     </footer>
   );
 }
@@ -113,6 +162,8 @@ export default function App() {
         <Hero />
         <About />
         <Projects />
+        <Experience />
+        <Contact />
         <Footer />
       </main>
     </div>

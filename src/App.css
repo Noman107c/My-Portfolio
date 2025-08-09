@@ -1,35 +1,68 @@
 /* Global Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(180deg, #000 10%, #0a0a0a 100%);
+  color: white;
+  scroll-behavior: smooth;
 }
 
-/* Navbar */
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, purple, pink);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, purple, pink);
+}
+
+/* Navbar (Vertical Left) */
 .navbar {
   position: fixed;
-  left: 0;
   top: 0;
-  height: 100%;
-  width: 80px;
-  background: black;
-  border-right: 1px solid #333;
+  left: 10px;
+  height: 100vh;
+  width: 20px;
+  background: linear-gradient(to bottom,rgba(0, 0, 0, 0.3);
+  z-index: 1000;);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: :center;
   gap: 24px;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  rotate: -180deg;
+
 }
 
 .navbar a {
-  color: #aaa;
+  color: #fff;
+  font-size: 14px;
   text-decoration: none;
-  transition: color 0.3s;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transition: color 0.1s, transform 0.3s;
+}
+.navbar a:hover {
+  color: #ffd1ff;
+  transform: scale(1.1);
 }
 
-.navbar a:hover {
-  color: white;
+/* Main Content Layout */
+.app {
+  display: flex;
+}
+.content {
+  margin-left: 80px;
+  width: 100%;
 }
 
 /* Hero Section */
@@ -40,17 +73,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .hero-subtitle {
   font-size: 18px;
-  color: #aaa;
+  color: #ccc;
+  letter-spacing: 1px;
 }
 
 .hero-title {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 56px);
   font-weight: bold;
   margin-top: 10px;
+  background: linear-gradient(to right, purple, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-text {
@@ -59,90 +97,149 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  color: #bbb;
+  line-height: 1.6;
 }
 
 .hero-button {
   margin-top: 24px;
-  padding: 12px 24px;
+  padding: 12px 28px;
   background: linear-gradient(to right, purple, pink);
   border-radius: 8px;
   font-weight: bold;
   color: white;
   text-decoration: none;
-  transition: opacity 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4);
 }
-
 .hero-button:hover {
-  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255, 0, 150, 0.6);
 }
 
 /* About Section */
 .about {
-  padding: 80px 24px;
+  padding: 80px 20px;
   background: #111;
 }
-
 .about h2 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
+  background: linear-gradient(to right, purple, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 .about p {
-  max-width: 700px;
+  max-width: 600px;
   margin-bottom: 24px;
+  color: #bbb;
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
 }
-
 .tech-card {
-  background: #222;
-  padding: 12px;
-  border-radius: 8px;
+  background: rgba(34, 34, 34, 0.8);
+  padding: 16px;
+  border-radius: 12px;
   text-align: center;
+  transition: transform 0.3s, background 0.3s;
+  backdrop-filter: blur(5px);
+}
+.tech-card:hover {
+  transform: translateY(-5px);
+  background: rgba(54, 54, 54, 0.9);
 }
 
 /* Projects Section */
 .projects {
   padding: 80px 24px;
 }
-
 .projects h2 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 24px;
+  background: linear-gradient(to right, purple, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
 }
-
 .project-card {
-  background: #222;
+  background: rgba(34, 34, 34, 0.8);
   padding: 16px;
   border-radius: 12px;
   text-decoration: none;
   color: white;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(5px);
 }
-
 .project-card img {
   width: 100%;
   border-radius: 8px;
 }
-
 .project-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(255, 0, 150, 0.4);
 }
-
 .project-card p {
   color: #aaa;
+}
+
+/* Contact Section */
+#contact {
+  padding: 80px 24px;
+  background: #000;
+}
+#contact h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  background: linear-gradient(to right, purple, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#contact p {
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+  color: #fff;
+}
+#contact form {
+  display: grid;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #222;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s, background 0.3s;
+}
+#contact input:focus,
+#contact textarea:focus {
+  border: 1px solid purple;
+  background: #1a1a1a;
+}
+#contact button {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background: linear-gradient(to right, purple, pink);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
 }
 
 /* Footer */
@@ -151,29 +248,37 @@ body {
   padding: 24px;
   text-align: center;
 }
-
 .footer-links {
   margin-top: 12px;
   display: flex;
   justify-content: center;
   gap: 16px;
 }
-
 .footer-links a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s;
 }
-
 .footer-links a:hover {
-  color: purple;
+  color: pink;
 }
 
-/* Layout */
-.app {
-  display: flex;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.content {
-  margin-left: 80px;
-  width: 100%;
+/* Contact Info */
+.contact-info {
+  margin-top: 20px;
+  text-align: left;
+}
+.contact-info a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+.contact-info a:hover {
+  text-decoration: underline;
 }
