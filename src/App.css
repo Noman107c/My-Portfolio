@@ -3,24 +3,11 @@ body {
   margin: 0;
   font-family: 'Poppins', Arial, sans-serif;
   background: linear-gradient(180deg, #000 10%, #0a0a0a 100%);
-  color: white;
+  color: #ccc;
   scroll-behavior: smooth;
 }
 
-/* Smooth Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #111;
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(0deg, purple, pink);
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, purple, pink);
-}
+
 
 /* Navbar (Vertical Left) */
 .navbar {
@@ -63,6 +50,7 @@ body {
 }
 
 /* Hero Section */
+
 .hero {
   min-height: 100vh;
   text-align: center;
@@ -107,7 +95,7 @@ body {
   background: linear-gradient(to right, purple, pink);
   border-radius: 8px;
   font-weight: bold;
-  color: white;
+  color: #ccc;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
   /* box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4); */
@@ -142,14 +130,14 @@ body {
   max-width: max-content;
   margin-right: auto;
   margin-bottom: 24px;
-  color: #bbb;
+  color: #ccc;
 }
 
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
   gap: 12px;
-  color: #bbb
+  color:#ccc
 }
 .tech-card {
   background: rgba(34, 34, 34, 0.8);
@@ -162,7 +150,7 @@ body {
 .tech-card:hover {
   transform: translateY(-5px);
   background:  purple, pink;
-  color: pink;
+  /* color: pink; */
 }
 
 /* Projects Section */
@@ -206,10 +194,12 @@ body {
   background: linear-gradient(to right, purple, pink);
   border-radius: 8px;
   font-weight: bold;
-  color: white;
+  color: #ccc;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 12px rg
+  align-items: center;
+  justify-content: center;
 }
 
 .project-button {
@@ -217,14 +207,62 @@ body {
   padding: 10px 20px;
   background: linear-gradient(to right, purple, pink);
   border-radius: 8px;
-  color: white;
+  color: #ccc;
   /* box-shadow: 0 4px 12px rgba(255, 0, 150, 0.4); */
+  text-align: center;
+  align-items: center;
 }
 
 .project-button:hover {
   color: pink;
   transform: scale(10);
 }
+
+
+/* Experience Section */
+.experience {
+  padding: 40px 20px;
+  background-color: #121212; /* Dark background */
+  color: purple, pink;
+  z-index: -100;
+  
+}
+.experience h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: purple;
+}
+
+.experience-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  color: #ccc;
+  position: auto;
+  z-index: 100;
+
+
+}
+
+.experience-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+  color:#ccc;
+}
+
+/* .company-name {
+  color: #ccc; /* Accent color */
+  /* font-weight: simibold;
+}
+
+.experience-year {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 8px;
+} */ */
 
 
 
@@ -244,7 +282,7 @@ body {
 #contact p {
   max-width: 600px;
   margin: 0 auto 24px auto;
-  color: #fff;
+  color: #ccc;
 }
 #contact form {
   display: grid;
@@ -258,7 +296,7 @@ body {
   border-radius: 8px;
   border: 1px solid #333;
   background: #222;
-  color: white;
+  color: #ccc;
   font-size: 14px;
   outline: none;
   transition: border 0.3s, background 0.3s;
@@ -273,7 +311,7 @@ body {
   cursor: pointer;
   font-size: 16px;
   background: linear-gradient(to right, purple, pink);
-  color: white;
+  color: #ccc;
   padding: 12px;
   border-radius: 8px;
 }
@@ -291,7 +329,7 @@ body {
   gap: 16px;
 }
 .footer-links a {
-  color: white;
+  color: #ccc;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -312,7 +350,7 @@ body {
 }
 .contact-info a {
   text-decoration: none;
-  color: white;
+  color: #ccc;
   transition: color 0.3s;
 }
 .contact-info a:hover {

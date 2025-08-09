@@ -65,12 +65,10 @@ function Projects() {
   const projects = [
     {
       title: "QUIZ APP",
-      description: "A cool project that solves real problems.",
       link: "https://globium-cloud-quiz-app.vercel.app/",
     },
     {
       title: "My-Portfolio",
-      description: "Another awesome app built with React.",
       link: "https://my-portfolio-noman.vercel.app/",
 }
       
