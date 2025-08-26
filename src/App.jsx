@@ -28,7 +28,8 @@ function Hero() {
       <p className="hero-subtitle">Hey, I’m</p>
       <h1 className="hero-title">Muhammad Noman Alam</h1>
       <p className="hero-text">
-        A full-stack developer passionate about building dynamic, user-friendly web apps.
+        I’m a Frontend Developer skilled in HTML, CSS, JavaScript, and React.js, passionate about building 
+        responsive and user-friendly web applications.I love turning ideas into clean, interactive, and engaging digital experiences.
       </p>
       <a href="#projects" className="hero-button">
         View My Work
@@ -56,9 +57,10 @@ function About() {
     <section id="about" className="about">
       <h2>About Me</h2>
       <p>
-        Software Engineering student with frontend development experience using HTML, CSS,
-        JavaScript, React, and Node.js. Completed multiple academic projects focused on
-        responsive and user-friendly interfaces. Currently working on a React-based project.
+Software Engineering student with hands-on frontend development experience in HTML, CSS, JavaScript, 
+React, and Node.js. Completed multiple academic projects emphasizing responsive and user-friendly 
+interfaces. Currently developing a React-based project, showcasing strong problem-solving skills and 
+a passion for building interactive web applications
       </p>
       <div className="tech-grid">
         {techStack.map((tech) => (
@@ -101,17 +103,19 @@ function Projects({ projects }) {
 function Experience() {
   const experiences = [
     {
-      role: "MERN Stack (Internship)",
-      company: "Globium Clouds",
-      year: "2025 - Present",
-      description:
-        "Developed responsive React applications with Tailwind CSS and Bootstrap.",
+role: "MERN Stack Intern",
+company: "Globium Clouds",
+year: "2025 - Present",
+description: 
+  "Developing responsive React applications using Tailwind CSS and Bootstrap, integrating RESTful APIs with Node.js and Express.js, and collaborating on MongoDB-based projects while following best practices in Git and deployment."
     },
     {
-      role: "Sales Representative",
-      company: "MStek",
-      year: "Aug 2023 - Dec 2023",
-      description: "Worked as Sales Representative at MStek.",
+role: "Sales Representative",
+company: "MStek",
+year: "Aug 2023 - Dec 2023",
+description: 
+  "Assisted clients with product inquiries, built customer relationships, and supported the sales team in achieving monthly targets. Gained experience in communication, negotiation, and customer service."
+
     },
   ];
 
@@ -156,6 +160,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="footer">
+      {/* <p>© {new Date().getFullYear()} Noman. All rights reserved.</p> */}
       <div className="footer-links">
         <a href="https://github.com/Noman107c">
           <FaGithub /> Github
@@ -188,7 +193,7 @@ export default function App() {
     },
     { 
       title: "My Portfolio", 
-      link: "https://my-portfolio-noman.vercel.app/",
+      link: "https://my-portfolio-five-tau-91.vercel.app/",
       description: "A personal portfolio website showcasing my skills, experience, and projects."
     },
     { 

@@ -94,7 +94,7 @@ body {
   font-size: 18px;
   color: #bbb;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 1000px;
 }
 .hero-button {
   margin-top: 24px;
@@ -127,15 +127,16 @@ body {
   text-align: center;
 }
 .about p {
-  width: 100%;
-  margin: 0 0 24px;
   color: #ccc;
-  text-align: justify;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
   gap: 12px;
+
 }
 .tech-card {
   background: rgba(34,34,34,0.8);
@@ -148,7 +149,6 @@ body {
   text-align: left;
   transition: transform 0.3s, background 0.3s;
 }
-.tech-card:hover { transform: translateY(-5px); }
 
 /* Projects */
 .projects { padding: 80px 24px; }
@@ -196,27 +196,50 @@ body {
   padding: 60px 20px;
   background: #121212;
 }
+
 .experience h2 {
-  font-size: 32px;
-  margin-bottom: 24px;
-  background: linear-gradient(to right, purple, pink);
+  font-size: 36px;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #a855f7, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
-.experience-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 15px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  color: #ccc;
-  transition: background 0.3s, box-shadow 0.3s;
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
 }
-.experience-card:hover {
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+
+.experience-item {
+  background: rgba(34, 34, 34, 0.85);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  color: #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.experience-item h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.experience-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #bbb;
+}
+
 
 /* Contact */
 #contact {
@@ -232,7 +255,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 #contact p {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto 24px;
 }
 #contact form {
