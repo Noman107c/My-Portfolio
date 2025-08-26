@@ -136,7 +136,7 @@ description:
 }
 
 /* ---------------- Contact ---------------- */
-function Contact() {
+dcfunction Contact() {
   return (
     <section id="contact" className="contact">
       <h2>Contact Me</h2>
