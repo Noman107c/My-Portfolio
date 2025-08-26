@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Admin from "./component/Admin";
+import Navbar from "./component/Navbar";
+
 import {
-  FaHome,
-  FaUser,
-  FaCode,
-  FaBriefcase,
-  FaEnvelope,
-  FaLinkedin,
   FaGithub,
+  FaLinkedin,
   FaWhatsapp,
   FaHtml5,
   FaCss3Alt,
@@ -16,27 +15,13 @@ import {
   FaJava,
   FaNodeJs,
   FaGitAlt,
-  FaPython
+  FaPython,
+  FaEnvelope,
 } from "react-icons/fa";
+
 import { SiTailwindcss, SiMongodb } from "react-icons/si";
 
-// Navbar Component
-function Navbar() {
-  return (
-    <nav className="navbar">
-      <div className="nav-links">
-        <a href="#home">  <FaHome /> Home</a>
-        <a href="#about">  <FaUser /> About</a>
-        <a href="#projects">  <FaCode /> Projects</a>
-        <a href="#experience">  <FaBriefcase /> Experience</a>
-        <a href="#contact">  <FaEnvelope /> Contact</a>
-      </div>
-
-    </nav>
-  );
-}
-
-// Hero Section
+/* ---------------- Hero ---------------- */
 function Hero() {
   return (
     <section id="home" className="hero">
@@ -45,12 +30,14 @@ function Hero() {
       <p className="hero-text">
         A full-stack developer passionate about building dynamic, user-friendly web apps.
       </p>
-      <a href="#projects" className="hero-button">View My Work</a>
+      <a href="#projects" className="hero-button">
+        View My Work
+      </a>
     </section>
   );
 }
 
-// About Section with Skill Icons
+/* ---------------- About ---------------- */
 function About() {
   const techStack = [
     { name: "HTML", icon: <FaHtml5 /> },
@@ -85,26 +72,16 @@ function About() {
   );
 }
 
-// Projects Section
-function Projects() {
-  const projects = [
-    {
-      title: "QUIZ APP",
-      link: "https://globium-cloud-quiz-app.vercel.app/",
-    },
-    {
-      title: "My-Portfolio",
-      link: "https://my-portfolio-noman.vercel.app/",
-    }
-  ];
-
+/* ---------------- Projects ---------------- */
+function Projects({ projects }) {
   return (
     <section id="projects" className="projects">
       <h2>Projects</h2>
       <div className="project-grid">
-        {projects.map((project) => (
-          <div key={project.title} className="project-card">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
             <h3>{project.title}</h3>
+            <p className="project-description">{project.description}</p> {/* ✅ Show description */}
             <a
               href={project.link}
               className="project-button"
@@ -120,21 +97,22 @@ function Projects() {
   );
 }
 
-// Experience Section
+/* ---------------- Experience ---------------- */
 function Experience() {
   const experiences = [
     {
-      role: "Mern Stack (Internship)",
+      role: "MERN Stack (Internship)",
       company: "Globium Clouds",
       year: "2025 - Present",
-      description: "Developed responsive React applications with Tailwind CSS and Bootstrap."
+      description:
+        "Developed responsive React applications with Tailwind CSS and Bootstrap.",
     },
     {
       role: "Sales Representative",
       company: "MStek",
-      year: "Aug, 2023 - Dec, 2023",
-      description: "Sales Representative at MStek.",
-    }
+      year: "Aug 2023 - Dec 2023",
+      description: "Worked as Sales Representative at MStek.",
+    },
   ];
 
   return (
@@ -142,7 +120,9 @@ function Experience() {
       <h2>Experience</h2>
       {experiences.map((exp, index) => (
         <div key={index} className="tech-card experience-card">
-          <h3>{exp.role} - <span className="company-name">{exp.company}</span></h3>
+          <h3>
+            {exp.role} - <span className="company-name">{exp.company}</span>
+          </h3>
           <p className="experience-year">{exp.year}</p>
           <p>{exp.description}</p>
         </div>
@@ -151,51 +131,102 @@ function Experience() {
   );
 }
 
-// Contact Section
+/* ---------------- Contact ---------------- */
 function Contact() {
   return (
     <section id="contact" className="contact">
       <h2>Contact Me</h2>
-      <p>I'd love to hear from you! Fill out the form below or reach me via social links.</p>
+      <p>
+        I'd love to hear from you! Fill out the form below or reach me via social
+        links.
+      </p>
       <form className="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" className="hero-button">Send Message</button>
+        <input type="text" placeholder="Subject" required />
+        <button type="submit" className="hero-button">
+          Send Message
+        </button>
       </form>
     </section>
   );
 }
 
-// Footer
+/* ---------------- Footer ---------------- */
 function Footer() {
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} Noman. All rights reserved.</p>
       <div className="footer-links">
-        <a href="https://github.com/Noman107c"><FaGithub/>Github</a>
-        <a href="https://www.linkedin.com/in/muhammad-noman-alam-ba7234379" ><FaLinkedin/>Linkedin</a>
-        <a href="mailto:nomanirshad0324@gmail.com">Email</a>
-        <a href="https://wa.me/923429037282" ><FaWhatsapp/>WhatsApp</a>
+        <a href="https://github.com/Noman107c">
+          <FaGithub /> Github
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-noman-alam-ba7234379">
+          <FaLinkedin /> Linkedin
+        </a>
+        
+        <a href="mailto:nomanirshad0324@gmail.com">
+          <FaEnvelope /> Email
+        </a>
+        <a href="https://wa.me/923429037282">
+          <FaWhatsapp /> WhatsApp
+        </a>
       </div>
+            <p>© {new Date().getFullYear()} Noman. All rights reserved.</p>
 
     </footer>
   );
 }
 
-// Main App
+
+/* ---------------- App ---------------- */
 export default function App() {
+  const [projects, setProjects] = useState([
+    { 
+      title: "QUIZ APP", 
+      link: "https://globium-cloud-quiz-app.vercel.app/",
+      description: "An interactive quiz platform built with React and Node.js." 
+    },
+    { 
+      title: "My Portfolio", 
+      link: "https://my-portfolio-noman.vercel.app/",
+      description: "A personal portfolio website showcasing my skills, experience, and projects."
+    },
+    { 
+      title: "Pest Control Website", 
+      link: "https://pest-control-eight.vercel.app/",
+      description: "A responsive pest control business website designed for customer engagement."
+    }
+  ]);
+
+  const handleAddProject = (newProject) => {
+    setProjects([...projects, newProject]);
+  };
+
   return (
-    <div className="app">
+    <Router>
       <Navbar />
-      <main className="content">
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Contact />
-        <Footer />
-      </main>
-    </div>
+      <Routes>
+        {/* Portfolio Page */}
+        <Route
+          path="/"
+          element={
+            <main className="content">
+              <Hero />
+              <About />
+              <Projects projects={projects} />
+              <Experience />
+              <Contact />
+              <Footer />
+            </main>
+          }
+        />
+
+        {/* Admin Page */}
+        <Route
+          path="/admin"
+          element={<Admin onAddProject={handleAddProject} />}
+        />
+      </Routes>
+    </Router>
   );
 }
